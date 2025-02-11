@@ -1,0 +1,135 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.background {
+	height: 100vh;
+	width: 100vw;
+	background: url('images/background-img.png') no-repeat center center fixed;
+	background-size: cover;
+}
+
+.bird {
+	position: fixed;
+	top: 40vh;
+	left: 30vw;
+	z-index: 100;
+	width: 8vw;
+	/* Ajuste dinámico */
+	height: auto;
+}
+
+/* Tubos */
+.pipe_sprite {
+	position: fixed;
+	top: 40vh;
+	left: 100vw;
+	width: 6vw;
+	height: 70vh;
+	background: radial-gradient(lightgreen 50%, green);
+	border: 5px solid black;
+}
+
+/* Mensaje de inicio */
+.message {
+	position: absolute;
+	z-index: 10;
+	color: black;
+	top: 30%;
+	left: 50%;
+	font-size: 3vw;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	background: rgba(255, 255, 255, 0.8);
+	padding: 10px 20px;
+	border-radius: 10px;
+}
+
+/* Puntuación */
+.score {
+	position: fixed;
+	z-index: 10;
+	height: 8vh;
+	font-size: 8vh;
+	font-weight: bold;
+	color: white;
+	-webkit-text-stroke: 2px black;
+	top: 10px;
+	left: 10px;
+}
+
+.score_val {
+	color: gold;
+}
+
+/* 📱 Responsividad en móviles (modo vertical) */
+@media only screen and (max-width: 768px) {
+	.message {
+		font-size: 5vw;
+		top: 45%;
+		padding: 10px;
+	}
+
+	.bird {
+		width: 12vw;
+		height: auto;
+		left: 20vw;
+	}
+
+	.pipe_sprite {
+		width: 10vw;
+	}
+
+	.score {
+		font-size: 6vh;
+	}
+}
+
+/* 📱 Modo horizontal en móviles */
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+	.message {
+		font-size: 4vw;
+		top: 50%;
+		padding: 8px;
+	}
+
+	.bird {
+		width: 10vw;
+		height: auto;
+		left: 15vw;
+		top: 35vh;
+	}
+
+	.pipe_sprite {
+		width: 8vw;
+		height: 60vh;
+	}
+
+	.score {
+		font-size: 5vh;
+	}
+}
+
+/* 📱 Móviles pequeños (menos de 480px) */
+@media only screen and (max-width: 480px) {
+	.message {
+		font-size: 6vw;
+		top: 50%;
+	}
+
+	.bird {
+		width: 15vw;
+		left: 10vw;
+	}
+
+	.pipe_sprite {
+		width: 12vw;
+	}
+
+	.score {
+		font-size: 4.5vh;
+	}
+}
